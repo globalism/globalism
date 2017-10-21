@@ -1,0 +1,10 @@
+services:
+#    globalism_user.example:
+#        class: Globalism\Bundle\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+    globalism_user.registration_success:
+        class: Globalism\Bundle\UserBundle\EventListener\RegistrationSuccessListener
+        arguments: ['@router']
+        tags:
+            - { name: kernel.event_subscriber }

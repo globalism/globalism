@@ -1,0 +1,22 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<style>
+    .card  {
+        margin: 10rem auto 0 auto;
+        width: 32rem;
+
+    }
+</style>
+
+<div class="card" >
+    <h4 class="card-header">Sign Up</h4>
+    <div class="card-body">
+        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+        {{ form_widget(form) }}
+        <div>
+            <input class="btn-primary btn" role="button" type="submit" value="{{ 'registration.submit'|trans }}" />
+            <a class="btn btn-info" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        </div>
+        {{ form_end(form) }}
+    </div>
+</div>
